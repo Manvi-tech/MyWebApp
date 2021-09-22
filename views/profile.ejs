@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title><%= title %></title>
+        <link rel="stylesheet" href="/css/common.css">
+        <link rel="stylesheet" href="/css/profile.css">
+    </head>
+
+    <body>
+        <h1 class="center mtop">PROFILE PAGE</h1>
+        <% if(locals.user.id == profile_user.id){ %>
+            <span class="sign-out-btn"><a href="/user/signout">Sign Out</a></span>
+        <% }%>
+       
+        <div id="profile-body">
+            <!-- about user -->
+            <div id="about">
+                <h3>About</h3>
+                 <p><span>Name:</span> <%= profile_user.name %></p>
+                 <p><span>Email id:</span> <%= profile_user.email %></p>
+            </div> 
+
+            <!-- update user -->
+            <div id="update-user">
+                <% if(user.id == profile_user.id){ %> 
+                    <h3>Edit</h3>
+                    <div>
+                        <form action="/user/update/<%= profile_user.id %>" method="POST">
+                           <span>New Name</span> 
+                           <input class="edit" type="text" name="name" value="<%= profile_user.name %>" required><br>
+                           <span>New email id</span>
+                           <input class="edit" type="email" name="email" value="<%= profile_user.email %>" required><br>
+                           <input type="submit" value="Update">
+                        </form>
+                    </div>
+                <%}%>
+            </div>
+
+        </div>
+
+    </body>
+</html>

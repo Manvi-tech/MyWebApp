@@ -1,0 +1,147 @@
+
+.far{
+    color: darkcyan;
+}
+
+/* header section */
+#home-header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom:1px solid #607d8b;
+    background-color: #fffacc;
+    /* background-color: #ffe5ea; */
+}
+#home-header h1{
+    margin: 10px 30px;
+    text-shadow: 1px 1px pink;
+}
+#home-header .login-btns{
+    margin: 20px 30px;
+}
+.login-btns a{
+    border: 1px solid black;
+    padding: 6px;
+    background-color: #37417d;
+    color: lavender !important;
+    text-decoration: none;
+}
+.login-btns a:hover{
+    text-shadow: 1px 1px pink;
+}
+
+/* main body*/
+#posts_users{
+    display: flex;
+}
+
+/* posts */
+#feed-posts{
+    margin-left: 20px;
+    padding: 15px;
+    height: 100vh;
+    border-right: 1px solid #607d8b;
+}
+#feed-posts h3{
+    color:#e91e63;
+}
+#feed-posts form input{
+    margin: 7% 3%;
+    background-color: #4e6a77;
+    color: white;
+    padding: 8px;
+    letter-spacing: 1px;
+}
+#display-posts{
+    width: 55%;
+   border-right: 1px solid #607d8b;
+}
+#display-posts h3{
+    text-align: center;
+    color: #e91e63;
+}
+#display-posts > ul li div{
+    margin-bottom: 25px;
+}
+#display-posts > ul li div p{
+   margin-top: -2px;
+    font-size: 12px;    
+}
+#display-posts > ul li div .post-content{
+    display: inline-block;
+    width: 300px;
+}
+
+/* comments */
+.comments{
+    margin-top: -15px;
+}
+.comments input[type=text]{
+     border: none;
+     border-bottom: 1px solid darkgrey;
+     background-color: transparent;
+     margin-right: 25px;
+     min-width: 250px;
+}
+.comments input[type=submit]{
+    background-color: #4e6a77;
+    color: white;
+    letter-spacing: 1px;
+    padding: 2px 5px;
+    border-radius: 12px 15px;
+}
+.display-comments ul{
+    margin-top: 40px;
+}
+.display-comments ul li{
+    margin-top:-27px;
+}
+.display-comments ul li div .user-name{
+    color: darkcyan;
+    font-size: 15px;
+}
+.display-comments ul li div .comment-content{
+    font-size: 15px;
+    display: inline-block;
+    width: 140px;
+}
+
+/* users */
+#users{
+   width: 20%;
+}
+#users h3{
+    color: #e91e63;
+    text-align: center;
+}
+#users ol li{
+    margin:10px 10px;
+    color: #585e91;
+    font-size: 20px;
+}
+#users ol li a{
+    text-decoration: none;
+    font-style: oblique;
+    color: #585e91;
+}
+#users ol li a:hover{
+    text-shadow: 1px 1px pink;
+    font-size: 21px;
+}
+
+/* responsive */
+@media only screen and (max-width: 500px) {
+    
+    #home-header .login-btns{
+        margin: 20px 10px;
+    }
+
+    #posts{
+        flex-direction: column;
+        align-items: center;
+    }
+    #feed-posts, #display-posts{
+        height: auto;
+        border-right: none;
+    }
+    
+}

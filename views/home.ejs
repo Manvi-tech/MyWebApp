@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+</head>
+
+<body>
+    <section id="home-header">
+        <h1 class="center mtop">MyWebApp</h1>
+
+        <% if(locals.user) { %> 
+            <div class="login-btns">
+                <a href="/user/profile/<%= user.id %>" class="center"><%= user.name %></a>
+                <a href="/user/signout" class="center">Sign Out</a>
+            </div>
+        <% }else{ %> 
+        <div class="login-btns">
+            <a href="/user/signup" class="center">Sign up</a>
+            <a href="/user/signin" class="center">Sign in</a>
+        </div>
+        <%} %>
+   </section>
+
+<!-- main body -->
+   <section id="posts_users">
+      <!-- 1st: create post -->
+        <div id="feed-posts">
+            <h3>Create a Post</h3>
+            <% if(locals.user){ %> 
+                <form action="/post/create" method="POST">
+                    <textarea name="content" cols="30" rows="4" placeholder="content.." required></textarea>
+                    <br><input type="submit" value="Create">
+                </form>
+            <%}else{ %> 
+                 <div style="background-color: #e6e9fb; padding: 10px; margin-left: -10px;">
+                    <h5>Sign in to create a post</h5> 
+                 </div>
+            <% }%>
+        </div>
+
+      <!--2nd: display posts -->
+       <div id="display-posts">
+           <h3>ALL POSTS</h3>
+           <ul>
+               <% for(i of posts){ %> 
+                 <%- include('_post') -%>    
+               <%}%>
+           </ul>
+       </div>
+
+        <!-- 3rd: al users -->
+        <div id="users">
+            <h3>ALL USERS</h3>
+            <ol>
+                <% for(user of all_users){ %> 
+                   <li>
+                       <a href="/user/profile/<%= user.id %>"><%= user.name %></a>
+                   </li>    
+                <%}%>
+            </ol>
+        </div>
+
+   </section>
+</body>
+</html>
+
+
+

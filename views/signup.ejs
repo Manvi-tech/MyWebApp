@@ -1,0 +1,23 @@
+
+<html>
+    <head>
+        <title><%= title %></title>
+        <link rel="stylesheet" href="/css/common.css">
+        <link rel="stylesheet" href="/css/form.css">
+    </head>
+    <body>
+        
+      <h1 class="center mtop">SIGN UP</h1>
+
+      <div>
+          <form action="/user/create" method="POST" class="form">
+               <input type="text" name="name" placeholder="Enter Name*" required>
+               <input type="email" name="email" placeholder="Email ID*" required>
+               <input type="password" name="password" required placeholder="Password*">
+               <input type="password" name="confirm_password" required placeholder="confirm password*">
+               <input type="submit" value="sign up">
+          </form>
+      </div>
+
+    </body>
+</html>

@@ -1,0 +1,47 @@
+
+body{
+    background-color: lightyellow;
+}
+
+.sign-out-btn{
+    float: right;
+    margin:-115px 20px;
+}
+
+#profile-body{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+#profile-body h3, span a{
+    color: #e91e63;
+}
+#profile-body div{
+    margin-bottom: 40px;
+}
+
+#about p{
+    margin-bottom: -15px;
+}
+#about p span{
+    display: inline-block;
+    width: 100px;
+}
+
+#update-user form span{
+    display: inline-block;
+    width: 150px;
+}
+#update-user form .edit{
+    width: 250px;
+    padding: 5px 3px;
+}
+#update-user form input[type=submit]{
+    margin: 15px 153px;
+    padding:5px;
+    border-radius: 12px 15px;
+    background-color: #4e6a77;
+    color: white;
+}
+
+

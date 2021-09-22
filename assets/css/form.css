@@ -1,0 +1,12 @@
+
+.form{
+    margin:60px auto;
+    
+}
+
+.form input{
+    display: block;
+    width: 240px;
+    font-size: 19px;
+    margin: 15px auto;
+}

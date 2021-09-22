@@ -1,0 +1,21 @@
+
+<html>
+    <head>
+        <title><%= title %></title>
+        <link rel="stylesheet" href="/css/common.css">
+        <link rel="stylesheet" href="/css/form.css">
+    </head>
+    <body>
+        
+      <h1 class="center mtop">SIGN IN</h1>
+
+      <div>
+        <form action="/user/createSession" method="POST" class="form">
+             <input type="email" name="email" placeholder="Email ID*" required>
+             <input type="password" name="password" required placeholder="Password*">
+             <input type="submit" value="sign in">
+        </form>
+    </div>
+
+    </body>
+</html>
