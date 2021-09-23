@@ -8,6 +8,7 @@ const User = require('./models/user');
 
 //session should be before passport bcoz passport uses session cookie
 const session = require('express-session');
+const expressLayout = require('express-ejs-layouts');
 const passport = require('passport');
 const passportLocal = require('./config/passport-local-strategy');
 const cookieParser = require('cookie-parser');
@@ -19,6 +20,10 @@ const app= express();
 
 app.use(express.urlencoded({extended:false}));
 app.use(cookieParser());
+
+app.use(expressLayout);
+app.set('layout extractStyles', true);
+app.set('layout extractScripts', true);
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));

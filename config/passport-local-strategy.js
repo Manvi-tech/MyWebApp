@@ -8,16 +8,18 @@ const User = require('../models/user');
 //passport is using local strategy to see which user has signed in, and 
 // then serialize the user in cookie 
 passport.use(new localStrategy({
-    usernameField: 'email'
+    usernameField: 'email',
+    passReqToCallback: true
 },
-function(email, password, done){
+function(req, email, password, done){
     User.findOne({email: email}, function(err, user){
         if(err){
-            console.log('err in finding user in passport!');
+            req.flash('error', err);
+            // console.log('err in finding user in passport!');
             return done(err);
         }
         if(!user || user.password != password){
-            console.log('Invalid username or Password!');
+            req.flash('error', 'Invalid username or Password!');
             return done(null, false);
         }
         if(user){

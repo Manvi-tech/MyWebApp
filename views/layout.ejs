@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    
+    <!-- noty cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js.map"></script>
+
+    <!-- my css -->
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/form.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/profile.css">
+
+</head>
+
+<body>
+    <main>
+        <%- body %>
+    </main>
+    
+    <%- script %>
+
+    <script>
+        <% if(flash.success && flash.success.length>0){ %>
+            console.log('hi');
+            new Noty({
+               theme: 'relax',
+               text: "<%= flash.success %>",
+               type: 'success',
+               layout: 'topRight',
+               timeout: 1550
+            }).show();
+        <% } %>
+        
+
+        <% if(locals.flash.error && flash.error.length>0){  %>
+            console.log('bi');
+            new Noty({
+               theme: 'relax',
+               text: "<%= flash.error %>",
+               type: 'error',
+               layout: 'topRight',
+               timeout: 1500
+            }).show();
+                    
+        <% }%>
+        
+    </script>
+
+</body>
+
+</html>
