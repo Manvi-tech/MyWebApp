@@ -2,6 +2,7 @@
 const Post = require('../models/post');
 const User = require('../models/user');
 
+//render home page
 module.exports.home = async function(req,res){
   try{
     let posts = await Post.find({})
@@ -22,7 +23,7 @@ module.exports.home = async function(req,res){
     });
     
   }catch(err){
-     console.log('ERROR!', err);
+     req.flash('error', err);
   }
 
 }

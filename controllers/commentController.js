@@ -2,6 +2,7 @@
 const Comment = require('../models/comment')
 const Post = require('../models/post');
 
+//post create-comment form 
 module.exports.createComment = async function(req, res){
     try{
         //find post on which comment has been made
@@ -16,18 +17,19 @@ module.exports.createComment = async function(req, res){
             });
                 
             if(comment){
-            post.comments.push(comment);
-            //always save whenever update 
-            post.save();
-            res.redirect('/');
+                post.comments.push(comment);
+                //always save whenever update 
+                post.save();
+                req.flash('success', 'Comment Published');
+                res.redirect('/');
             }
         }
    }catch(err){
-       console.log('ERROR!', err);
+     req.flash('error', err);
    }
 }
 
-
+//delete comment
 module.exports.destroyComment = async function(req, res){
     try{
         let comment = await Comment.findById(req.params.id);
@@ -37,12 +39,14 @@ module.exports.destroyComment = async function(req, res){
             comment.remove();
             //remove comment from post array of comments
             await Post.findByIdAndUpdate(postId, {$pull: {comments: req.params.id}});
+            req.flash('sucesss', 'Comment deleted');
             return res.redirect('back');
         }
         else{
+            req.flash('error', 'Comment Not deleted!!!')
             return res.redirect('back');
         }
     }catch(err){
-        console.log('ERROR!', err);
+       req.flash('error', err);
     }
 }
