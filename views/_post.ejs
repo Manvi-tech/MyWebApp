@@ -3,6 +3,22 @@
     <div>
         <span class="post-content">Post Content: <%= i.content%></span>
         <span>
+            <!-- like post or remove like -->
+            <% if(locals.user){ %> 
+                <span class="likes-count">
+                    <%= i.likes.length %>
+                </span>
+                <span>
+                  <a href="/like/toggle/?id=<%= i._id%>&type=Post" class="toggle-like-btn" data-likes="<%= i.likes.length %>">
+                    <i class="far fa-thumbs-up"></i>
+                  </a>
+                </span>
+            <%}else{%>
+              <span class="likes-count">  <%= i.likes.length %></span>
+              <i class="far fa-thumbs-up"></i>
+            <%}%>
+
+            <!-- delete post -->
             <% if(locals.user && locals.user.id == i.user.id){ %> 
                 <a href="/post/destroy/<%= i.id %>">
                    <i class="far fa-trash-alt"></i>
@@ -14,7 +30,7 @@
 
     <div class="comments">
         <!-- create comment form -->
-       <div>
+       <div class="create-comment">
             <% if(locals.user){ %> 
                 <form action="/comment/create" method="POST">
                     <input type="text" name="content" placeholder="add a comment.." required>
@@ -28,7 +44,7 @@
         <div class="display-comments">
             <ul>
                 <% for(comment of i.comments) { %>
-                   <%- include('_comment.ejs') -%>    
+                   <%- include('_comment') -%>    
                 <%}%>
             </ul>
         </div>

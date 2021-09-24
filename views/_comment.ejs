@@ -2,8 +2,28 @@
 <!-- display comments of post -->
 <li>
     <div>
-        <span class="user-name"><%= comment.user.name %>-</span>
-        <span class="comment-content"><%= comment.content %></span>
+        <!-- comment info -->
+        <div>
+            <span class="user-name"> <%= comment.user.name %> </span>
+            <span class="comment-content"><%= comment.content%></span>
+        </div>
+
+        <!-- toggle like -->
+        <% if(locals.user){ %>
+            <span class="likes-count">
+                <%= comment.likes.length %>
+            </span> 
+            <span>
+                <a href="/like/toggle/?id=<%= comment._id%>&type=Comment" class="toggle-like-btn" data-likes="<%= comment.likes.length %>">
+                    <i class="far fa-thumbs-up"></i>
+                </a>
+            </span>
+        <%}else{%>
+            <span class="likes-count"> <%= comment.likes.length %> </span>
+            <span><i class="far fa-thumbs-up"></i></span>
+        <%}%>
+
+        <!-- delete comment -->
         <% if(locals.user && locals.user.id == comment.user.id){ %> 
           <span>
               <a href="/comment/destroy/<%= comment.id %>">
@@ -11,5 +31,6 @@
                </a>
           </span>
         <%}%>
+
     </div>
  </li>

@@ -43,7 +43,7 @@
             </ul>
         </div>
 
-        <!-- 3rd: al users -->
+        <!-- 3rd: all users -->
         <div id="users">
             <h3>ALL USERS</h3>
             <ol>
@@ -56,6 +56,17 @@
         </div>
 
     </section>
+
+
+    <script src="js/toggle_likes.js"></script>
+    <script>
+
+        $('.toggle-like-btn').each(function(){
+           let self = this;
+           let toggleLike = new ToggleLike(self);
+        });
+
+    </script>
 </body>
 
 

@@ -9,7 +9,7 @@
     flex-direction: column;
     margin-left: 20px;
 }
-#profile-body h3, span a{
+#profile-body h3, .sign-out-btn a{
     color: #e91e63;
 }
 #profile-body div{

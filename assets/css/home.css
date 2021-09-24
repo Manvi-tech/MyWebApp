@@ -1,6 +1,20 @@
 
+/* stylings of both posts and comments */
 .far{
-    color: darkcyan;
+    color: black;
+}
+.likes-count{
+    margin-top: 5px;
+    font-size: 15px;
+    color: black;
+}
+a{
+    text-decoration: none;
+}
+
+.fa-trash-alt{
+    margin-left: 15px;
+    font-size: 18px;
 }
 
 /* header section */
@@ -9,7 +23,6 @@
     justify-content: space-between;
     border-bottom:1px solid #607d8b;
     background-color: #fffacc;
-    /* background-color: #ffe5ea; */
 }
 #home-header h1{
     margin: 10px 30px;
@@ -23,7 +36,6 @@
     padding: 6px;
     background-color: #37417d;
     color: lavender !important;
-    text-decoration: none;
 }
 .login-btns a:hover{
     text-shadow: 1px 1px pink;
@@ -53,15 +65,13 @@
 }
 #display-posts{
     width: 55%;
-   border-right: 1px solid #607d8b;
+    border-right: 1px solid #607d8b;
 }
 #display-posts h3{
     text-align: center;
     color: #e91e63;
 }
-#display-posts > ul li div{
-    margin-bottom: 25px;
-}
+
 #display-posts > ul li div p{
    margin-top: -2px;
     font-size: 12px;    
@@ -74,6 +84,9 @@
 /* comments */
 .comments{
     margin-top: -15px;
+}
+.comments .create-comment{
+    margin-top: 30px;
 }
 .comments input[type=text]{
      border: none;
@@ -90,10 +103,10 @@
     border-radius: 12px 15px;
 }
 .display-comments ul{
-    margin-top: 40px;
+    margin-top: 20px;
 }
 .display-comments ul li{
-    margin-top:-27px;
+    margin-bottom: 15px;
 }
 .display-comments ul li div .user-name{
     color: darkcyan;
@@ -101,8 +114,6 @@
 }
 .display-comments ul li div .comment-content{
     font-size: 15px;
-    display: inline-block;
-    width: 140px;
 }
 
 /* users */
