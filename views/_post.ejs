@@ -1,5 +1,5 @@
 <!-- display post -->
-<li>
+<li class="post-container">
     <div>
         <span class="post-content">Post Content: <%= i.content%></span>
         <span>
@@ -32,11 +32,13 @@
         <!-- create comment form -->
        <div class="create-comment">
             <% if(locals.user){ %> 
-                <form action="/comment/create" method="POST">
-                    <input type="text" name="content" placeholder="add a comment.." required>
-                    <input type="hidden" name="post" value="<%= i._id %>">
-                    <input type="submit" value="create">
-                </form>    
+                <div>
+                    <form action="/comment/create" method="POST">
+                        <input type="text" name="content" placeholder="add a comment.." required>
+                        <input type="hidden" name="post" value="<%= i._id %>">
+                        <input type="submit" value="create">
+                    </form> 
+                </div>   
             <%}%>
        </div>
 

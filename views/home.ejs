@@ -22,12 +22,14 @@
         <div id="feed-posts">
             <h3>Create Post</h3>
             <% if(locals.user){ %> 
-                <form action="/post/create" method="POST">
-                    <textarea name="content" cols="30" rows="4" placeholder="content.." required></textarea>
-                    <br><input type="submit" value="Create">
-                </form>
+                <div>
+                    <form action="/post/create" method="POST">
+                        <textarea name="content" cols="30" rows="4" placeholder="content.." required></textarea>
+                        <br><input type="submit" value="Create">
+                    </form>
+                </div>
             <%}else{ %> 
-                    <div style="background-color: #e6e9fb; padding: 10px; margin-left: -10px;">
+                    <div style="background-color: #e6e9fb; padding: 10px; width: 200px; margin: auto;">
                     <h5>Sign in to create a post</h5> 
                     </div>
             <% }%>
@@ -35,7 +37,7 @@
 
         <!--2nd: display posts -->
         <div id="display-posts">
-            <h3>ALL POSTS</h3>
+            <h3>POSTS</h3>
             <ul>
                 <% for(i of posts){ %> 
                     <%- include('_post') -%>    
@@ -45,7 +47,7 @@
 
         <!-- 3rd: all users -->
         <div id="users">
-            <h3>ALL USERS</h3>
+            <h3>USERS</h3>
             <ol>
                 <% for(user of all_users){ %> 
                     <li>

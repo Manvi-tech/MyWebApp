@@ -60,3 +60,13 @@ app.listen(port, function(err){
     if(err)console.log(err);
     console.log('server is running on :', port);
 });
+
+
+
+
+// pending:
+// ajax for creating posts, comments
+// post content should be replaced with image
+// friendships
+// deployment
+// myPosts on profile page

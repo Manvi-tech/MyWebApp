@@ -1,3 +1,6 @@
+.profile{
+    background-color: #fff7eb;
+}
 
 .sign-out-btn{
     float: right;
@@ -7,7 +10,8 @@
 #profile-body{
     display: flex;
     flex-direction: column;
-    margin-left: 20px;
+    padding-left: 20px;
+    
 }
 #profile-body h3, .sign-out-btn a{
     color: #e91e63;
@@ -31,6 +35,8 @@
 #update-user form .edit{
     width: 250px;
     padding: 5px 3px;
+    background-color: #e7f7ff;
+    border: none;
 }
 #update-user form input[type=submit]{
     margin: 15px 153px;
