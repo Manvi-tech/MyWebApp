@@ -65,8 +65,8 @@ app.listen(port, function(err){
 
 
 // pending:
-// ajax for creating posts, comments
-// post content should be replaced with image
-// friendships
-// deployment
 // myPosts on profile page
+// chat room
+// ajax for creating posts, comments
+// friendships /followers/ following
+// deployment
