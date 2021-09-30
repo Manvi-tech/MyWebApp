@@ -50,7 +50,7 @@ a{
     text-align: center;
 }
 
-/* posts */
+/* create posts */
 #feed-posts{
     width: 250px;
     padding: 15px;
@@ -65,29 +65,33 @@ a{
     padding: 8px;
     letter-spacing: 1px;
 }
+
+/* display posts */
 #display-posts{
     width: 55%;
 }
-
 #display-posts .post-container{
     margin: auto;
     border: 1px solid lightgrey;
     padding: 10px;
-    margin:10px 10px 50px 10px;
+    margin:10px 10px 50px 50px;
     list-style: none;
     width: 500px;
     box-shadow: 10px 10px 5px grey;
 }
-
-#display-posts > ul li div p{
-    margin-top: -2px;
-    font-size: 12px;    
+#display-posts .post-creator{
+   margin-top: -10px;
+   font-size: 17px;
 
 }
-#display-posts > ul li div .post-content{
-    display: inline-block;
-    width: 300px;
-  
+#display-posts .caption{
+    margin-top: -20px;
+    font-size: 14px;
+    color: grey;
+}
+#display-posts .post-img img{
+    width: 90%;
+    height: 200px;
 }
 
 /* comments */
@@ -111,6 +115,8 @@ a{
     padding: 2px 5px;
     border-radius: 12px 15px;
 }
+
+/* display comments */
 .display-comments ul{
     margin-top: 20px;
 }

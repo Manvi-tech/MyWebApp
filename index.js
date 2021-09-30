@@ -1,6 +1,5 @@
 
 const express = require('express');
-const path = require('path');
 const port = 8001;
 
 const db = require('./config/mongoose');
@@ -15,6 +14,9 @@ const cookieParser = require('cookie-parser');
 const MongoStore = require('connect-mongo');
 const flash = require('connect-flash');
 const customMWare = require('./config/middleware');
+
+const path = require('path');
+const multer = require('multer'); 
 
 const app= express();
 
@@ -52,7 +54,7 @@ app.use(passport.setAuthenticatedUser);
 app.use(flash());
 app.use(customMWare.setFlash);
 
-app.use(express.static('assets'));
+app.use(express.static(path.join(__dirname, 'assets')));
 
 app.use('/', require('./routes/index'));
 

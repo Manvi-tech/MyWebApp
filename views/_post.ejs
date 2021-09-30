@@ -1,7 +1,16 @@
 <!-- display post -->
 <li class="post-container">
     <div>
-        <span class="post-content">Post Content: <%= i.content%></span>
+        
+        <p class="post-creator"><%= i.user.name %></p>
+        <p class="caption"><%= i.content %></p>
+        
+        <!-- post image -->
+        <div class="post-img">
+            <img src="/images/post-images/<%= i.imageUrl%>">
+        </div>
+      
+
         <span>
             <!-- like post or remove like -->
             <% if(locals.user){ %> 
@@ -25,7 +34,7 @@
                 </a>
              <%}%>
         </span>
-        <p>By: <%= i.user.name %></p>
+
     </div>
 
     <div class="comments">
