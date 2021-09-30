@@ -2,7 +2,7 @@
 This is social media website where a user can create posts, comments, likes, along which notifications are displayed.
 
 Tools and Technologies:
-Node.js, Express.js, Mongo DB, Mongoose js, Passport js (for authentication & authorisation), AJAX, Noty and Connect-flash (for notifications).
+Node.js, Express.js, Mongo DB, Mongoose js, Passport js (for authentication & authorisation),Multer, AJAX, Noty and Connect-flash (for notifications).
 
 Features of MyWebApp:
 1. User can create account
