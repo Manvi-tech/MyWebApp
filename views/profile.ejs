@@ -5,30 +5,51 @@
         <span class="sign-out-btn"><a href="/user/signout">Sign Out</a></span>
     <% }%>
     
-    <div id="profile-body">
-        <!-- about user -->
-        <div id="about">
-            <h3>About</h3>
-                <p><span>Name:</span> <%= profile_user.name %></p>
-                <p><span>Email id:</span> <%= profile_user.email %></p>
-        </div> 
+   <div id="user-details">
+        <div id="profile-body">
+            <!-- about user -->
+            <div id="about">
+                <h3>About</h3>
+                    <p><span>Name:</span> <%= profile_user.name %></p>
+                    <p><span>Email id:</span> <%= profile_user.email %></p>
+            </div> 
 
-        <!-- update user -->
-        <div id="update-user">
-            <% if(user.id == profile_user.id){ %> 
-                <h3>Edit</h3>
-                <div>
-                    <form action="/user/update/<%= profile_user.id %>" method="POST">
-                        <span>New Name</span> 
-                        <input class="edit" type="text" name="name" value="<%= profile_user.name %>" required><br>
-                        <span>New email id</span>
-                        <input class="edit" type="email" name="email" value="<%= profile_user.email %>" required><br>
-                        <input type="submit" value="Update">
-                    </form>
-                </div>
-            <%}%>
+            <!-- update user -->
+            <div id="update-user">
+                <% if(user.id == profile_user.id){ %> 
+                    <h3>Edit</h3>
+                    <div>
+                        <form action="/user/update/<%= profile_user.id %>" method="POST">
+                            <span>New Name</span> 
+                            <input class="edit" type="text" name="name" value="<%= profile_user.name %>" required><br>
+                            <span>New email id</span>
+                            <input class="edit" type="email" name="email" value="<%= profile_user.email %>" required><br>
+                            <input type="submit" value="Update">
+                        </form>
+                    </div>
+                <%}%>
+            </div>
         </div>
 
-    </div>
+
+          <!-- posts of user -->
+        <div id="user_posts">
+            <h3>Your posts</h3>
+            <div id="post-container">
+                <% for(post of profile_user.posts){ %> 
+                    <div style="background-image: url('/images/post-images/<%= post.imageUrl%>');">
+                        <% if(locals.user && locals.user.id == profile_user.id){ %> 
+                            <a href="/post/destroy/<%= post.id %>">
+                               <i class="far fa-trash-alt"></i>
+                            </a>
+                         <%}%>
+                    </div>
+                <%}%>
+            </div>
+        </div>
+
+   </div>
+
+  
 
 </body>

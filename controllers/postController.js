@@ -5,7 +5,7 @@ const Like = require('../models/like');
 
 //create post
 module.exports.createPost = async function(req, res){
-    console.log(req.file.filename);
+    // console.log(req.file.filename);
     try{ 
         let newpost = await Post.create({
             imageUrl: req.file.filename,

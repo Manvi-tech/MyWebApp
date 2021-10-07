@@ -11,7 +11,7 @@
     display: flex;
     flex-direction: column;
     padding-left: 20px;
-    
+    margin-right: 5%;
 }
 #profile-body h3, .sign-out-btn a{
     color: #e91e63;
@@ -46,4 +46,29 @@
     color: white;
 }
 
+#user-details{
+    display: flex;
+}
+#user-details #user_posts h3{
+    color: #e91e63;
+    text-align: center;
+}
+#user-details #post-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#user_posts #post-container div{
+    height: 200px;
+    width: 300px;
+    margin: 5px 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#user_posts #post-container div a{
+    float: right;
+    margin-right: 70px;
+}
 

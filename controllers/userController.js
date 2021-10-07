@@ -59,7 +59,7 @@ module.exports.profile = async function(req, res){
         let user = await User.findById(req.params.id)
         .populate('posts');
      
-        console.log(user.posts);
+        // console.log(user.posts);
         
         return res.render('profile',{
             title: 'User|Profile',
