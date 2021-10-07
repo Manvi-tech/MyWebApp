@@ -21,7 +21,7 @@ a{
 #home-header {
     display: flex;
     justify-content: space-between;
-    background-color: #e7e7e2;;
+    background-color: #ffdfea;
     /* #f3fbea */
 }
 #home-header h1{
@@ -44,6 +44,7 @@ a{
 /* main body*/
 #posts_users{
     display: flex;
+    background-color: #fffff5;
 }
 #posts_users h3{
     color: #e91e63;
@@ -60,8 +61,7 @@ a{
     margin: auto;
 }
 #feed-posts form input{
-    background-color: #4e6a77;
-    color: white;
+    background-color: #efe5ff;
     padding: 8px;
     letter-spacing: 1px;
 }
@@ -85,13 +85,14 @@ a{
 
 }
 #display-posts .caption{
-    margin-top: -20px;
+    margin-top: -10px;
     font-size: 14px;
     color: grey;
+    border-bottom: 1px solid lightgray;
 }
 #display-posts .post-img img{
-    width: 90%;
-    height: 200px;
+    width: 100%;
+    height: 280px;
 }
 
 /* comments */
@@ -136,7 +137,7 @@ a{
    width: 250px;
 }
 #users ol li{
-    margin:10px 10px;
+    margin:10px 30px;
     color: #585e91;
     font-size: 20px;
 }
