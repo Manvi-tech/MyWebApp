@@ -1,4 +1,7 @@
-
+#project-info{
+    background-image: url('/images/bg-images/');
+    background-size: cover;
+}
 #project-details{
     margin: 10px 40px;
     padding: 0;
