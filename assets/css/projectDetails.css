@@ -1,0 +1,31 @@
+
+#project-details{
+    margin: 10px 40px;
+    padding: 0;
+}
+
+#project-details h2{
+    text-align: center;
+}
+
+#project-details ol>li{
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+#project-details ol li ul{
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+#project-details ol li ul li{
+  margin-bottom: 5px;
+}
+
+#project-details ol li ul li .tool-name{
+    display: inline-block;
+    font-weight: 600;
+    color: darkslategray;
+}
+
+

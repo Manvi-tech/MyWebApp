@@ -27,3 +27,10 @@ module.exports.home = async function(req,res){
   }
 
 }
+
+// project details
+module.exports.projectDetails = function(req, res){
+  return res.render('projectInfo',{
+    title: 'Project Details'
+  });
+}
