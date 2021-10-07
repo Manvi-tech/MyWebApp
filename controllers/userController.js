@@ -56,7 +56,11 @@ module.exports.update = async function(req, res){
 //rendering profile page
 module.exports.profile = async function(req, res){
     try{
-        let user = await User.findById(req.params.id);
+        let user = await User.findById(req.params.id)
+        .populate('posts');
+     
+        console.log(user.posts);
+        
         return res.render('profile',{
             title: 'User|Profile',
             profile_user: user

@@ -1,4 +1,4 @@
-
+const User = require('../models/user');
 const Post = require('../models/post');
 const Comment = require('../models/comment');
 const Like = require('../models/like');
@@ -7,11 +7,16 @@ const Like = require('../models/like');
 module.exports.createPost = async function(req, res){
     console.log(req.file.filename);
     try{ 
-        await Post.create({
+        let newpost = await Post.create({
             imageUrl: req.file.filename,
             content: req.body.content,
             user: req.user._id
         });
+
+        let user = req.user;
+        await user.posts.push(newpost._id);
+        user.save();
+
         req.flash('success', 'Post Created');    
         return res.redirect('back');
     }catch(err){
@@ -32,6 +37,12 @@ module.exports.destroyPost = async function(req, res){
             await Like.deleteMany({_id: {$in: post.comments}});
             //del comments
             await Comment.deleteMany({post: req.params.id});
+
+            // remove post from array of posts of user
+            let currUser = await User.findById(post.user._id);
+            currUser.posts.pull(post._id);
+            currUser.save();
+
             //del post
             post.remove();
             
