@@ -1,0 +1,22 @@
+
+footer{
+    padding-bottom: 40px;
+    background-color: #c1c1c126;
+    display: flex;
+}
+footer>div{
+    width: 45%;
+    margin:10px 20px;
+}
+
+footer>div p{
+    font-size: 14px;
+    text-align: left;
+}
+
+footer #icons a{
+    font-size: 26px;
+    padding: 3px 5px 1px 8px;
+    box-shadow: 10px 10px 5px lightgrey;
+    border-radius: 5%;
+}

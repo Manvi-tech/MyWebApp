@@ -21,8 +21,8 @@ a{
 #home-header {
     display: flex;
     justify-content: space-between;
-    background-color: #ffdfea;
-    /* #f3fbea */
+    background-color: #eeeeee;
+    /* #f3fbea #ffdfea */
 }
 #home-header h1{
     margin: 10px 30px;
