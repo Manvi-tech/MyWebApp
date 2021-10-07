@@ -21,8 +21,7 @@ a{
 #home-header {
     display: flex;
     justify-content: space-between;
-    background-color: #eeeeee;
-    /* #f3fbea #ffdfea */
+    background-color: #fce4ec;
 }
 #home-header h1{
     margin: 10px 30px;
@@ -44,7 +43,6 @@ a{
 /* main body*/
 #posts_users{
     display: flex;
-    background-color: #fffff5;
 }
 #posts_users h3{
     color: #e91e63;
@@ -55,7 +53,7 @@ a{
 #feed-posts{
     width: 250px;
     padding: 15px;
-    height: 100vh;
+    background-color: #fffff5;
 }
 #feed-posts div{
     margin: auto;
@@ -68,7 +66,7 @@ a{
 
 /* display posts */
 #display-posts{
-    width: 55%;
+    width: 58%;
 }
 #display-posts .post-container{
     margin: auto;
@@ -134,7 +132,9 @@ a{
 
 /* users */
 #users{
-   width: 250px;
+   width: 260px;
+   background-color: #fffff5;
+ 
 }
 #users ol li{
     margin:10px 30px;
