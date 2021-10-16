@@ -2,9 +2,24 @@
     background-color: #fff7eb;
 }
 
-.sign-out-btn{
+.info{
     float: right;
     margin:-115px 20px;
+}
+
+.info span{
+    margin-right: 10px;
+    font-size: 18px;
+}
+.info a.sign-out{
+    border: 1px solid darkblue;
+    color: #e91e63;
+    padding: 3px;
+}
+.info a.sign-out:hover{
+    border: 1px solid #e91e63;
+    color: darkblue; 
+    background-color: lightcyan;  
 }
 
 #profile-body{
@@ -13,7 +28,7 @@
     padding-left: 20px;
     margin-right: 5%;
 }
-#profile-body h3, .sign-out-btn a{
+#profile-body h3{
     color: #e91e63;
 }
 #profile-body div{

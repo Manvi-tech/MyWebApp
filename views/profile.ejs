@@ -1,10 +1,30 @@
 
 <body class="profile">
     <h1 class="center mtop">PROFILE PAGE</h1>
-    <% if(locals.user.id == profile_user.id){ %>
-        <span class="sign-out-btn"><a href="/user/signout">Sign Out</a></span>
-    <% }%>
     
+    <div class="info">
+         <!-- no of followers and following -->
+        <span><%= profile_user.followers.length %> Followers</span>
+        <span><%= profile_user.following.length %> Following</span>
+
+        <% if(locals.user.id == profile_user.id){ %>
+            <span><a class="sign-out" href="/user/signout">Sign Out</a></span>
+            
+        <% }else{%>
+            <!-- loged in user already following profile_user -->
+                <% if(isFollowing){ %> 
+                    <a href="/user/unfollow/<%= profile_user._id %>">unFollow</a>    
+                <%}else{ %>
+                    <!-- profile user is following logedin user -->
+                    <% if(isFollower){ %>
+                        <a href="/user/follow/<%= profile_user._id%>">follow Back</a>
+                    <%}else{%>
+                        <a href="/user/follow/<%= profile_user._id%>">follow</a>
+                    <%}%>
+                <%}%>
+        <%}%>
+    </div>    
+        
    <div id="user-details">
         <div id="profile-body">
             <!-- about user -->
@@ -34,7 +54,9 @@
 
           <!-- posts of user -->
         <div id="user_posts">
-            <h3>Your posts</h3>
+            <% if(profile_user.posts.length !=0){ %> 
+                <h3>Your posts</h3>
+            <%}%>
             <div id="post-container">
                 <% for(post of profile_user.posts){ %> 
                     <div style="background-image: url('/images/post-images/<%= post.imageUrl%>');">

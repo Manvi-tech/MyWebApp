@@ -64,10 +64,7 @@ app.listen(port, function(err){
 });
 
 
-
-
 // pending:
-// myPosts on profile page
 // chat room
 // ajax for creating posts, comments
 // friendships /followers/ following

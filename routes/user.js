@@ -37,7 +37,9 @@ router.post('/createSession', passport.authenticate(
 
 router.get('/signout',userController.destroySession);
 
-router.get('/profile/:id',passport.checkAuthentication, userController.profile);
-router.post('/update/:id',passport.checkAuthentication, userController.update);
+router.get('/profile/:id', passport.checkAuthentication, userController.profile);
+router.post('/update/:id', passport.checkAuthentication, userController.update);
+router.get('/follow/:id', passport.checkAuthentication, userController.followUser);
+router.get('/unFollow/:id', passport.checkAuthentication, userController.unFollowUser);
 
 module.exports = router;

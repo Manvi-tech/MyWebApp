@@ -1,5 +1,6 @@
 
 const User = require('../models/user');
+const Follow = require('../models/follow');
 
 // post signup form 
 module.exports.create = async function(req,res){
@@ -56,16 +57,80 @@ module.exports.update = async function(req, res){
 //rendering profile page
 module.exports.profile = async function(req, res){
     try{
-        let user = await User.findById(req.params.id)
-        .populate('posts');
-     
-        // console.log(user.posts);
-        
+        let profileUser = await User.findById(req.params.id)
+        .populate('posts')
+        .populate('followers')
+        .populate('following');
+       
+        // logged in user is folllowing profile user
+        let isFollowing = await Follow.findOne({
+            follower: req.user._id,
+            following: req.params.id
+        });
+
+        //profile user is following logged in user
+        let isFollower = await Follow.findOne({
+            following: req.user._id,
+            follower: req.params.id
+        });
+
         return res.render('profile',{
             title: 'User|Profile',
-            profile_user: user
+            profile_user: profileUser,
+            isFollowing: isFollowing,
+            isFollower: isFollower
         });
+
     }catch(err){
         req.flash('error', err);
     }
+}
+
+//follow user
+module.exports.followUser = async function(req, res){
+    try{
+
+        await User.findByIdAndUpdate(req.params.id, {
+            $push: {followers: req.user._id}
+        },{new: true});
+
+        await User.findByIdAndUpdate(req.user._id, {
+            $push: {following: req.params.id}
+        },{new: true});
+        
+        await Follow.create({
+            follower: req.user._id,
+            following: req.params.id
+        });
+
+        return res.redirect('back');
+    }catch(err){
+        console.log(err);
+        return;
+    }
+}
+
+//unfollow user
+module.exports.unFollowUser = async function(req, res){
+    try{
+
+        await User.findByIdAndUpdate(req.user._id, {
+            $pull: {following: req.params.id}
+        });
+
+        await User.findByIdAndUpdate(req.params.id, {
+            $pull: {followers: req.user._id}
+        });
+
+        await Follow.findOneAndDelete({
+          follower: req.user._id,
+          following: req.params.id
+        });
+
+        return res.redirect('back');
+    }catch(err){
+        console.log(err);
+        return res.redirect('back');
+    }
+   
 }
