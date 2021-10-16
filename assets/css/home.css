@@ -27,16 +27,18 @@ a{
     margin: 10px 30px;
     text-shadow: 1px 1px pink;
 }
-#home-header .login-btns{
-    margin: 20px 30px;
+
+#home-header .btns{
+    margin: 20px 20px;
+    display: inline-block;
 }
-.login-btns a{
+#home-header .btns a{
     border: 1px solid black;
     padding: 6px;
     background-color: #37417d;
     color: lavender !important;
 }
-.login-btns a:hover{
+.btns a:hover{
     text-shadow: 1px 1px pink;
 }
 
@@ -51,12 +53,15 @@ a{
 
 /* create posts */
 #feed-posts{
-    width: 250px;
+    width: 270px;
     padding: 15px;
     background-color: #fffff5;
 }
 #feed-posts div{
     margin: auto;
+}
+#feed-posts div textarea{
+    background-color: #ffebf2;
 }
 #feed-posts form input{
     background-color: #efe5ff;
@@ -64,10 +69,15 @@ a{
     letter-spacing: 1px;
     width: 200px;
 }
+#feed-posts div input[type=submit]{
+    padding: 5px 10px;
+    width: auto;
+    margin: 30px auto;
+}
 
 /* display posts */
 #display-posts{
-    width: 58%;
+    width: 60%;
 }
 #display-posts .post-container{
     margin: auto;
@@ -135,7 +145,7 @@ a{
 #users{
    width: 260px;
    background-color: #fffff5;
- 
+   
 }
 #users ol li{
     margin:10px 30px;

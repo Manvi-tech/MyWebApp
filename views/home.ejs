@@ -6,17 +6,24 @@
             MyWebApp
         </h1>
 
+      <div>
+        
+        <div class="btns" style="margin-right: -15px;">
+            <a href="/project-details" target="_blank">About</a>
+        </div>
+
         <% if(locals.user) { %> 
-            <div class="login-btns">
+            <div class="btns">
                 <a href="/user/profile/<%= user.id %>" class="center"><%= user.name %></a>
                 <a href="/user/signout" class="center">Sign Out</a>
             </div>
         <% }else{ %> 
-        <div class="login-btns">
-            <a href="/user/signup" class="center">Sign up</a>
-            <a href="/user/signin" class="center">Sign in</a>
-        </div>
+            <div class="btns">
+                <a href="/user/signup" class="center">Sign up</a>
+                <a href="/user/signin" class="center">Sign in</a>
+            </div>
         <%} %>
+      </div>
     </section>
 
     <!-- main body -->
@@ -28,7 +35,7 @@
                 <div>
                     <form action="/post/create" method="POST" enctype="multipart/form-data">
                         <input type="file" placeholder="choose" name="post-image" required>
-                       <br><br> <textarea name="content" cols="30" rows="2" placeholder="caption.." required></textarea>
+                       <br><br> <textarea name="content" cols="27" rows="4" placeholder="caption.." required></textarea>
                         <br><input type="submit" value="Create">
                     </form>
                 </div>
